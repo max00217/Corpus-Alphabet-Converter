@@ -4,9 +4,9 @@ import thecodrr.crayon
 import clipboard
 import os
 
-println(crayon.color("{bold.italic.green 코퍼스 문자 변환기 v0.1 (ctrl + c로 종료)\n}"))
+println(crayon.color("{bold.italic.green Corpus Alphabet Converter v0.1 (ctrl + c to exit)\n}"))
 for true {
-	mut origin := os.input(crayon.color("{bold.italic.cyan \n코퍼스 문자로 변환할 영어 텍스트 입력 (ex: Corpus -> Yotkuy): }"))
+	mut origin := os.input(crayon.color("{bold.italic.cyan \nEnter the English text you want to convert to the Corpus Alphabet. (ex: Corpus -> Yotkuy): }"))
 
 	mut yconvert := origin.replace("c", "y").replace("C", "Y").replace("s", "y").replace("S", "Y")
 	mut kconvert := yconvert.replace("h", "k").replace("H", "K").replace("p", "k").replace("P", "K").replace("x", "k").replace("X", "K")
@@ -19,5 +19,5 @@ for true {
 	println("${origin} -> ${result}")
 	mut cb := clipboard.new()
 	cb.copy(etcconvert)
-	println("(번역 자동 복사됨.)")
+	println("(Translation has been automatically copied to your clipboard.)")
 }
